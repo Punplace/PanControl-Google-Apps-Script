@@ -1,6 +1,8 @@
 # PanControl-Google-Apps-Script
 The Google Apps Script of the PanControl
 
+[example](https://sites.google.com/view/cardelectricitytest/%E9%A6%96%E9%A0%81)
+
 ## usage
 ### read data
 #### Get whole table
