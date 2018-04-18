@@ -15,10 +15,10 @@ function getMachineData()
 // 回傳 Record 資料陣列
 function ReturnRecordData(para)
 {
-  var cardID = para.CardID,
+  var cardNumber = para.CardNumber,
       machineID = para.MachineID,
-      startTime = para.StartTime,
-      endTime = para.EndTime; //取得現在時間
+      startTime = ComposeDateTimeString(para.StartTime),
+      endTime = ComposeDateTimeString(para.EndTime);
   
-  return [cardID, machineID, startTime, endTime];
+  return [cardNumber, machineID, startTime, endTime];
 }

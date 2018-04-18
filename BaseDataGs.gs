@@ -11,8 +11,7 @@ function ReturnCardTypeData(para)
 function ReturnTeamData(para)
 {
   var name = para.Name;
-  Logger.log(para.IsActive);
-  var isActive = (para.IsActive == 'on')? 'True' : 'False';
+  var isActive = (para.IsActive == 'on')? 1 : 0;
   
   return [name, isActive];
 }

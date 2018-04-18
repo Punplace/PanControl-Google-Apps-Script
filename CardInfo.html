@@ -7,10 +7,11 @@
     <div class="container">
         <form action="<?= actionUrl ?>" method="post" target="_blank">
             <input type="hidden" name="TableName" value="CardInfo" />
+            <input type="hidden" name="IsActive" value="1" />
             
             <div class="form-group">
                 <label>卡號</label>
-                <input id="CardNumber" class="form-control" type="number" name="CardNumber" placeholder="請填入卡號，10個數字" required/>
+                <input id="CardNumber" class="form-control" maxlength="10" minlength="10" onkeypress="return isNumeric(event)" name="CardNumber" placeholder="請填入卡號，10個數字" required/>
             </div>
             <div class="form-group">
                 <label>姓名</label>
@@ -51,6 +52,17 @@
   <script>
     $("#CardNumber").focus();
     
+    
+    function isNumeric (evt) {
+      var theEvent = evt || window.event;
+      var key = theEvent.keyCode || theEvent.which;
+      key = String.fromCharCode (key);
+      var regex = /[0-9]/;
+      if ( !regex.test(key) ) {
+        theEvent.returnValue = false;
+        if(theEvent.preventDefault) theEvent.preventDefault();
+      }
+    }
   </script>
     
 </html>

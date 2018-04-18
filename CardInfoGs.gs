@@ -19,7 +19,8 @@ function ReturnCardInfoData(para)
       owner = para.Owner,
       cardTypeID = para.CardTypeID,
       teamID = para.TeamID,
-      createdTime = new Date().toLocaleString(); //取得現在時間
+      createdTime = ComposeDateTimeString(new Date()), //取得現在時間
+      isActive = para.IsActive;
   
-  return [cardNumber, owner, cardTypeID, teamID, createdTime];
+  return [cardNumber, owner, cardTypeID, teamID, createdTime, isActive];
 }

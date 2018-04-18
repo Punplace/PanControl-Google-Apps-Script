@@ -11,9 +11,9 @@
             <div class="form-group">
                 <label>卡號</label>
                 <? var cardData = getCardData(); ?>
-                <select class="form-control" name="CardID">
+                <select class="form-control" name="CardNumber">
                     <? for (var i = 0; i < cardData.length; i++) { ?>
-                    <option value="<?= cardData[i][0] ?>">
+                    <option value="<?= cardData[i][1] ?>">
                         <?= cardData[i][1] ?>
                     </option>
                     <? } ?>
@@ -45,12 +45,13 @@
   
   
   <script>
+    $(Start());
+    
     function Start(){
-      
-      $("#StartTime").val(new Date().toLocaleString());
+      $("#StartTime").val(new Date());
     }
     function End(){
-      $("#EndTime").val(new Date().toLocaleString());
+      $("#EndTime").val(new Date());
     }
   </script>
     
