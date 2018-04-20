@@ -50,38 +50,8 @@ return:[{"ID":"5","CardNumber":"0000000002","StartTime":"20180416080000","EndTim
 
 ### write data
 post
-parameter:in main.gs line: 50 AddData function
-```
-function AddData(para)
-{
-  // 前面要有個隱藏欄位(hidden)傳 TableName
-  var tableName = para.TableName;
-  if(tableName == null){
-    return "沒有 TableName！";
-  }
-  
-  // 各頁所傳的資料陣列，用 switch 去對應方法撈出來
-  var dataArray;
-  
-  switch(tableName)
-  {
-    case "CardInfo":
-      dataArray = ReturnCardInfoData(para);
-      break;
-    case "CardType":
-      dataArray = ReturnCardTypeData(para);
-      break;
-    case "Team":
-      dataArray = ReturnTeamData(para);
-      break;
-    case "Machine":
-      dataArray = ReturnMachineData(para);
-      break;
-    case "Record":
-      dataArray = ReturnRecordData(para);
-      break;
-    default:
-      return "沒有這個表，檢查一下你的 TableName 吧";
-  }
-```
+example `curl -L "https://script.google.com/macros/s/AKfycbz46PadqPv4C4F91evN9LaR8evKg-iOgn5VzoNHdFM/dev" --data "TableName=Team&Name=test1951"`
 
+CardInfo CardNumber	Owner	CardTypeID	TeamID
+CardType Name
+Team Name
